@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ins Gästebuch eintragen</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+  <body>
+
+    <h1>Hier können SIe sich ins Gästebuch eintragen</h1>
+    <form>
+      <input
+        type="text"
+        name="firstname"
+        id="firstNameInput"
+        placeholder="Vorname..."
+      /><br />
+      <input
+      type="text"
+      name="lastname"
+      id="lastNameInput"
+      placeholder="Nachname..."
+    /><br />
+    <input
+    type="text"
+    name="commentar"
+    id="commentarInput"
+    placeholder="Kommentar..."
+  /><br />
+      <input
+        type="number"
+        name="date"
+        id="dateInput"
+        placeholder="01.01.2024"
+      /><br />
+      <input type="submit" value="Save" onclick="saveNewService()" />
+    </form>
+
+    <script>
+      function saveNewService() {
+        event.preventDefault();
+        // mein verhalten...
+
+        const firstName = document.getElementById("firstNameInput").value;
+        const lastName = document.getElementById("lastNameInput").value;
+        const commentargb = document.getElementById("commentarInput").value;
+        const dategb = Number(document.getElementById("dateInput").value);
+
+        const guestBookCommentar = { firstname: firstName, lastname: lastName, commentar: commentargb, date: dategb  };
+
+        fetch("/api/index", {
+          method: "POST",
+          body: JSON.stringify(guestBookCommentar),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            window.location.href = "/pages/index.html";
+          });
+      }
+    </script>
+  </body>
+</html>

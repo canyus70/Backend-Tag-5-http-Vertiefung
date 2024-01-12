@@ -1,0 +1,18 @@
+body {
+    background-color: darkkhaki;
+}
+
+h1 { font-size: 2rem;
+text-align: center;}
+
+p { text-align: center;}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    text-align: center;
+}

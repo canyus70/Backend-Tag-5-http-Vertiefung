@@ -1,0 +1,14 @@
+[
+  {
+    "firstname": "Yusuf",
+    "lastname": "Can",
+    "commentar": "Hier steht mein Kommentar",
+    "date": "11.01.2024"
+  },
+  {
+    "firstname": "Hans",
+    "lastname": "Wurst",
+    "commentar": "Krakauer Beste Leben",
+    "date": 1012024
+  }
+]
